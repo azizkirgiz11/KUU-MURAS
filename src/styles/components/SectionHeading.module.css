@@ -1,0 +1,4 @@
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; scroll-margin-top: calc(var(--topbar-h) + 16px); }
+.head h2 { font-size: clamp(24px, 3vw, 34px); }
+.head p { color: var(--mute); margin-top: 8px; max-width: 62ch; }
+.eyebrow { display: inline-block; margin-bottom: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }

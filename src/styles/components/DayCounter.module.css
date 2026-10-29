@@ -1,0 +1,5 @@
+.row { display: flex; align-items: center; gap: 14px; }
+.row b { font: 700 46px/1 var(--font-serif); color: var(--accent); }
+.row span { display: grid; font-weight: 600; }
+.row small { color: var(--mute); font-weight: 400; font-size: 13px; }
+.today { font: 700 18px var(--font-serif); color: var(--accent); }

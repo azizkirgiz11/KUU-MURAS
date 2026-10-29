@@ -1,0 +1,13 @@
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid transparent; border-radius: 999px; font-weight: 600; line-height: 1; white-space: nowrap; transition: transform 0.2s var(--ease), filter 0.2s, background 0.2s, border-color 0.2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.md { padding: 13px 24px; }
+.sm { padding: 9px 16px; font-size: 14px; }
+.lg { padding: 16px 30px; font-size: 17px; }
+.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--on-accent); box-shadow: 0 10px 24px -12px var(--accent); }
+.primary:hover { filter: brightness(1.07); }
+.ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.ghost:hover { border-color: var(--accent); color: var(--accent); }
+.soft { background: var(--accent-soft); color: var(--accent); }
+.soft:hover { filter: brightness(1.15); }
+.glass { background: oklch(0.15 0.02 var(--ah) / 0.45); backdrop-filter: blur(10px); border-color: oklch(1 0 0 / 0.25); color: #fff; }

@@ -1,0 +1,5 @@
+.nav { display: flex; flex-wrap: wrap; gap: 6px; font-size: 14px; color: var(--mute); margin-bottom: 14px; }
+.item { display: inline-flex; gap: 6px; }
+.item a:hover { color: var(--accent); }
+.item i { font-style: normal; opacity: 0.5; }
+.item [aria-current] { color: var(--ink); }

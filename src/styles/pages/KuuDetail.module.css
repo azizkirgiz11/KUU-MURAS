@@ -1,0 +1,19 @@
+.page { display: grid; gap: 28px; padding-top: 16px; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+.head h1 { font-size: clamp(34px, 5vw, 58px); margin: 12px 0 4px; }
+.author { color: var(--accent); font-weight: 600; font-size: 18px; }
+.badges { display: flex; gap: 8px; }
+.badges span { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; }
+.badges .easy { color: var(--ok); }
+.badges .medium { color: var(--mid); }
+.badges .hard { color: var(--hard); }
+.about { display: grid; gap: 14px; padding: 24px 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); font-size: 17px; }
+.tip { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; border-radius: var(--radius-sm); background: var(--accent-soft); font-size: 15px; }
+.tip svg { flex: none; color: var(--accent); margin-top: 2px; }
+.more { display: grid; gap: 16px; margin-top: 24px; }
+.moreHead { display: flex; justify-content: space-between; align-items: baseline; }
+.moreHead h2 { font-size: 26px; }
+.moreHead a { color: var(--accent); font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

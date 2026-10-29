@@ -1,0 +1,15 @@
+.wrap { position: relative; }
+.trigger { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--ink); transition: all 0.2s; }
+.trigger:hover { border-color: var(--accent); color: var(--accent); }
+.pop { position: absolute; z-index: 60; right: 0; top: calc(100% + 10px); width: 296px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); animation: pop 0.2s var(--ease); }
+.pop h4 { font: 600 12px var(--font-sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute); margin: 4px 0 10px; }
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
+.modes button { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 4px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: none; font-size: 13px; }
+.modes button[aria-pressed='true'] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.swatch { display: grid; justify-items: center; gap: 6px; padding: 8px 2px; border: 1px solid transparent; border-radius: var(--radius-sm); background: none; font-size: 11px; color: var(--mute); }
+.swatch i { width: 30px; height: 30px; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 2px oklch(1 0 0 / 0.25); }
+.swatch[aria-pressed='true'] { border-color: var(--line); color: var(--ink); background: var(--panel-2); }
+.swatch[aria-pressed='true'] i { outline: 2px solid var(--ink); outline-offset: 2px; }
+@keyframes pop { from { opacity: 0; transform: translateY(-6px) scale(0.97); } }
+@media (max-width: 420px) { .pop { position: fixed; left: 12px; right: 12px; top: 76px; width: auto; } }

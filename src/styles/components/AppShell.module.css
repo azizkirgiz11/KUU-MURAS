@@ -1,0 +1,146 @@
+
+.shell {
+  --palette-hue: 55;
+  --bg-lightness: 0.96;
+  --bg-chroma: 0.025;
+  --overlay-opacity: 0.65;
+
+  position: relative;
+
+  background-color: oklch(
+    var(--bg-lightness)
+    var(--bg-chroma)
+    var(--palette-hue)
+  );
+
+  background-image:
+    linear-gradient(
+      oklch(
+        var(--bg-lightness)
+        var(--bg-chroma)
+        var(--palette-hue) /
+        var(--overlay-opacity)
+      ),
+      oklch(
+        var(--bg-lightness)
+        var(--bg-chroma)
+        var(--palette-hue) /
+        var(--overlay-opacity)
+      )
+    ),
+    url("../../images/background.png");
+
+  background-size: 100% auto, 100% auto;
+  background-position: top center, top center;
+  background-repeat: repeat-y, repeat-y;
+
+  display: grid;
+  grid-template-columns: var(--sw) minmax(0, 1fr) var(--rw);
+  min-height: 100vh;
+
+  transition:
+    grid-template-columns 0.35s var(--ease),
+    background-color 0.3s ease;
+}
+
+/* Түс палитралары */
+.shell[data-palette="bakyr"] {
+  --palette-hue: 55;
+}
+
+.shell[data-palette="kyzyl"] {
+  --palette-hue: 25;
+}
+
+.shell[data-palette="altyn"] {
+  --palette-hue: 88;
+}
+
+.shell[data-palette="jashyl"] {
+  --palette-hue: 155;
+}
+
+.shell[data-palette="asman"] {
+  --palette-hue: 240;
+}
+
+/* Жарык тема */
+.shell[data-mode="light"] {
+  --bg-lightness: 0.96;
+  --bg-chroma: 0.035;
+  --overlay-opacity: 0.3;
+}
+
+/* Караңгы тема */
+.shell[data-mode="dark"] {
+  --bg-lightness: 0.18;
+  --bg-chroma: 0.035;
+  --overlay-opacity: 0.4;
+}
+
+/* Авто тема — системанын түсүнө жараша */
+@media (prefers-color-scheme: dark) {
+  .shell[data-mode="auto"] {
+    --bg-lightness: 0.18;
+    --bg-chroma: 0.035;
+    --overlay-opacity: 0.82;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .shell[data-mode="auto"] {
+    --bg-lightness: 0.96;
+    --bg-chroma: 0.035;
+    --overlay-opacity: 0.65;
+  }
+}
+
+.main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 8px clamp(18px, 3.2vw, 44px) 40px;
+}
+
+.page {
+  animation: enter 0.45s var(--ease);
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.backdrop {
+  display: none;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@media (max-width: 1280px) {
+  .shell {
+    grid-template-columns: var(--sw) minmax(0, 1fr);
+  }
+
+  .show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: var(--veil);
+    backdrop-filter: blur(3px);
+  }
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

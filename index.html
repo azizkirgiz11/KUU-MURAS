@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ky" data-theme="dark" data-palette="bakyr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Күү Мурас — комузду онлайн үйрөнүү платформасы: ноталар, санарип комуз жана видео сабактар." />
+    <meta property="og:title" content="Күү Мурас — комуз сабактары" />
+    <meta property="og:image" content="/images/hero.jpg" />
+    <meta name="theme-color" content="#0f1420" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,500;0,7..72,700;1,7..72,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>Күү Мурас — комуз сабактары</title>
+    <script>
+      // Темага жана палитрага жыпылдабай өтүү
+      try {
+        var m = localStorage.getItem('km-mode') || 'dark';
+        var p = localStorage.getItem('km-palette') || 'bakyr';
+        if (m === 'auto') m = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = m;
+        document.documentElement.dataset.palette = p;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

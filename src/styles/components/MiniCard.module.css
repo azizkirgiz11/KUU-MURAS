@@ -1,0 +1,6 @@
+.card { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--accent-soft); border: 1px solid transparent; transition: border-color 0.2s, transform 0.2s var(--ease); }
+.card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.text { display: grid; min-width: 0; }
+.text small { color: var(--mute); font-size: 12px; }
+.text b { font: 700 17px var(--font-serif); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.go { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); }

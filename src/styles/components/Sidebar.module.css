@@ -1,0 +1,257 @@
+
+.side {
+  --sidebar-hue: 55;
+  --sidebar-lightness: 0.96;
+  --sidebar-chroma: 0.04;
+  --sidebar-overlay: 0.35;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 22px 14px;
+
+  background-color: oklch(
+    var(--sidebar-lightness)
+    var(--sidebar-chroma)
+    var(--sidebar-hue)
+  );
+
+  background-image:
+    linear-gradient(
+      oklch(
+        var(--sidebar-lightness)
+        var(--sidebar-chroma)
+        var(--sidebar-hue) /
+        var(--sidebar-overlay)
+      ),
+      oklch(
+        var(--sidebar-lightness)
+        var(--sidebar-chroma)
+        var(--sidebar-hue) /
+        var(--sidebar-overlay)
+      )
+    ),
+    url("../../images/sidebarbg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-right: 1px solid var(--line);
+  overflow: hidden auto;
+  z-index: 50;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Түс палитралары */
+.side[data-palette="bakyr"] {
+  --sidebar-hue: 55;
+}
+
+.side[data-palette="kyzyl"] {
+  --sidebar-hue: 25;
+}
+
+.side[data-palette="altyn"] {
+  --sidebar-hue: 88;
+}
+
+.side[data-palette="jashyl"] {
+  --sidebar-hue: 155;
+}
+
+.side[data-palette="asman"] {
+  --sidebar-hue: 240;
+}
+
+/* Жарык тема */
+.side[data-mode="light"] {
+  --sidebar-lightness: 0.96;
+  --sidebar-chroma: 0.04;
+  --sidebar-overlay: 0.35;
+}
+
+/* Караңгы тема */
+.side[data-mode="dark"] {
+  --sidebar-lightness: 0.18;
+  --sidebar-chroma: 0.035;
+  --sidebar-overlay: 0.75;
+}
+
+/* Авто тема — караңгы система */
+@media (prefers-color-scheme: dark) {
+  .side[data-mode="auto"] {
+    --sidebar-lightness: 0.18;
+    --sidebar-chroma: 0.035;
+    --sidebar-overlay: 0.75;
+  }
+}
+
+/* Авто тема — жарык система */
+@media (prefers-color-scheme: light) {
+  .side[data-mode="auto"] {
+    --sidebar-lightness: 0.96;
+    --sidebar-chroma: 0.04;
+    --sidebar-overlay: 0.35;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding-left: 1px;
+}
+
+.brand {
+  display: grid;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.brand b {
+  font: 700 21px var(--font-serif);
+}
+
+.brand small {
+  font-size: 11px;
+  color: var(--mute);
+}
+
+.collapse {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--mute);
+}
+
+.collapse:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.nav {
+  display: grid;
+  gap: 4px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: var(--mute);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.link:hover {
+  color: var(--ink);
+  background: var(--panel);
+}
+
+.active {
+  color: var(--ink);
+  background: var(--panel);
+  box-shadow: inset 3px 0 var(--accent);
+}
+
+.active svg {
+  color: var(--accent);
+}
+
+.quote {
+  margin-top: auto;
+  padding: 0 8px;
+  font: italic 500 16px/1.55 var(--font-serif);
+  color: var(--mute);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.user:hover {
+  color: var(--accent);
+}
+
+.avatar {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+/* Жабык абал — desktop */
+@media (min-width: 901px) {
+  .collapsed {
+    padding-inline: 12px;
+  }
+
+  .collapsed .brand,
+  .collapsed .label,
+  .collapsed .quote {
+    display: none;
+  }
+
+  .collapsed .top {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .collapsed .logo {
+    padding-left: 0;
+  }
+
+  .collapsed .link,
+  .collapsed .user {
+    justify-content: center;
+    padding-inline: 0;
+  }
+}
+
+/* Мобилдик меню */
+@media (max-width: 900px) {
+  .side {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(300px, 86vw);
+    transition: transform 0.35s var(--ease);
+    box-shadow: var(--shadow);
+  }
+
+  .collapsed {
+    transform: translateX(-105%);
+  }
+}

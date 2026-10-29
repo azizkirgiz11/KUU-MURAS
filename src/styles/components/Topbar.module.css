@@ -1,0 +1,13 @@
+.bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; height: var(--topbar-h); padding: 0 clamp(18px, 3.2vw, 44px); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent); }
+.actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.btn { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--ink); transition: all 0.2s; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.menu, .mobileLogo { display: none; }
+@media (max-width: 900px) {
+  .menu { display: grid; }
+  .mobileLogo { display: block; font: 700 19px var(--font-serif); }
+}
+@media (max-width: 640px) {
+  .mobileLogo { display: none; }
+  .login { display: none; }
+}

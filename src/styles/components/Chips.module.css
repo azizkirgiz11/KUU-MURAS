@@ -1,0 +1,4 @@
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--mute); font-size: 14px; font-weight: 500; transition: all 0.2s; }
+.chip:hover { border-color: var(--accent); color: var(--ink); }
+.chip[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }

@@ -1,0 +1,28 @@
+.page { display: grid; gap: 24px; padding-top: 16px; }
+.kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.head { display: grid; gap: 10px; }
+.head h1 { font-size: clamp(32px, 4.4vw, 52px); }
+.head p { color: var(--mute); max-width: 62ch; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.stats div { display: grid; gap: 2px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.stats b { font: 700 44px/1 var(--font-serif); color: var(--accent); }
+.stats small { font-size: 20px; color: var(--mute); }
+.stats span { color: var(--mute); }
+.continue { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding: 26px 30px; border-radius: var(--radius); border: 1px solid var(--line); background: linear-gradient(120deg, var(--accent-soft), var(--panel)); }
+.continue h2 { font-size: 28px; margin: 6px 0 4px; }
+.continue p { color: var(--mute); }
+.next { color: var(--mute); }
+.next a { color: var(--accent); font-weight: 600; }
+.block { display: grid; gap: 14px; margin-top: 14px; }
+.block h2 { font-size: 24px; }
+.list { list-style: none; display: grid; gap: 8px; }
+.list li { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); }
+.list a { font-weight: 600; }
+.list a:hover { color: var(--accent); }
+.list small { color: var(--mute); }
+.empty { padding: 22px; border: 2px dashed var(--line); border-radius: var(--radius-sm); color: var(--mute); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.reset { justify-self: start; margin-top: 12px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 99px; background: none; color: var(--mute); }
+.reset:hover { color: var(--hard); border-color: var(--hard); }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .stats { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

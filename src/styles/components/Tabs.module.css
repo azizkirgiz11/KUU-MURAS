@@ -1,0 +1,5 @@
+.tabs { display: flex; gap: 6px; padding: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; width: fit-content; max-width: 100%; overflow-x: auto; }
+.tab { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border: 0; border-radius: 999px; background: transparent; color: var(--mute); font-weight: 600; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected='true'] { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--on-accent); }
+@media (max-width: 560px) { .tab { padding: 10px 14px; } .tab span { font-size: 14px; } }

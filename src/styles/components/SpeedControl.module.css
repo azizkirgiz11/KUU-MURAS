@@ -1,0 +1,10 @@
+.wrap { display: grid; gap: 10px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); }
+.head { display: flex; justify-content: space-between; align-items: baseline; }
+.label { font: 600 12px var(--font-sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute); }
+.value { font: 700 20px var(--font-serif); color: var(--accent); }
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.presets button { padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line); background: none; font-size: 13px; font-weight: 600; color: var(--mute); }
+.presets button:hover { color: var(--ink); border-color: var(--accent); }
+.presets button[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.range { width: 100%; accent-color: var(--accent); }
+.note { color: var(--mute); font-size: 12px; }

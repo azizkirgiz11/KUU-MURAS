@@ -1,0 +1,25 @@
+.page { display: grid; gap: 52px; padding-top: 16px; }
+.kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.head { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(24px, 5vw, 56px); align-items: center; }
+.head h1 { font-size: clamp(34px, 5vw, 58px); margin: 10px 0 16px; }
+.head p { color: var(--mute); font-size: 17px; max-width: 58ch; }
+.ctx { margin-top: 14px; color: var(--accent) !important; font-weight: 600; }
+.head img { border-radius: 28px; aspect-ratio: 1; object-fit: cover; width: 100%; box-shadow: var(--shadow); }
+.block { display: grid; gap: 16px; }
+.block h2 { font-size: 28px; }
+.block h3 { font-size: 20px; margin-top: 12px; }
+.block > p { color: var(--mute); font-size: 17px; max-width: 70ch; }
+.features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.features article { display: grid; gap: 6px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.features span { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--accent-soft); color: var(--accent); margin-bottom: 6px; }
+.features h3 { font-size: 20px; margin: 0; }
+.features p { color: var(--mute); font-size: 15px; }
+.road { list-style: none; display: grid; gap: 10px; }
+.road li { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); }
+.road svg { color: var(--accent); flex: none; }
+.row { display: flex; }
+.credits { list-style: none; display: grid; gap: 8px; }
+.credits li { display: grid; grid-template-columns: minmax(180px, 1fr) 2fr; gap: 12px; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); font-size: 14px; }
+.credits span { color: var(--mute); }
+.small { color: var(--mute); font-size: 13px; }
+@media (max-width: 900px) { .head, .features { grid-template-columns: 1fr; } .credits li { grid-template-columns: 1fr; gap: 2px; } }

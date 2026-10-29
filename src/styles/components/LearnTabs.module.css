@@ -1,0 +1,5 @@
+.wrap { display: grid; gap: 14px; }
+.blurb { color: var(--mute); max-width: 70ch; }
+.panel { animation: in 0.35s var(--ease); }
+.stack { display: grid; gap: 28px; }
+@keyframes in { from { opacity: 0; transform: translateY(8px); } }
